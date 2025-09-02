@@ -8,12 +8,9 @@ package edu.miu.badripaudel.lab1;
  */
 public class Prog5 {
     public static void main(String[] args) {
-        int[] input = { 20, 21, 38, 45, 0, 12, 18, 69, 39, 100, 0, 22 };
-        secondMin(input);
-    }
+        int[] arrayOfInts = {20, 21, 38, 45, 0, 12, 18, 69, 39, 100, 0, 22};
 
-    public static void secondMin(int[] arrayOfInts){
-        if (arrayOfInts == null || arrayOfInts.length == 0){
+        if (arrayOfInts == null || arrayOfInts.length == 0) {
             System.out.println("Array is null or empty");
             return;
         }
@@ -28,6 +25,6 @@ public class Prog5 {
                 second = arrayOfInts[i];
             }
         }
-        System.out.println("secondMin: " + second);
+        System.out.println("Second Minimum Element is : " + second);
     }
 }
