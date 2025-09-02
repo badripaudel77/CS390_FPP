@@ -25,29 +25,18 @@ public class FirstNTermSeries {
         System.out.println("1) Enter the number of terms in the series (first series): ");
         int n = scanner.nextInt();
 
-        StringBuilder series = new StringBuilder();
-
         double sum = 0.0;
         int divi = 1;
         for (int i = 0; i < n; i++) {
             if (i % 2 == 0) {
                 sum += (double) 1 / divi;
-                if (i != 0) {
-                    series.append(" + ");
-                    series.append("1/").append(divi);
-                } else {
-                    series.append("1");
-                }
-            } else {
+            }
+            else {
                 sum -= (double) 1 / divi;
-                series.append(" - ");
-                series.append("1/").append(divi);
             }
             divi += 2;
         }
-
-        System.out.println("1) First series for " + n + " terms is : " + series + " = " + sum);
-
+        System.out.println("(first series) Sum of the series for " + n + " terms is = " + sum);
     }
 
     /* Question b
@@ -58,28 +47,20 @@ public class FirstNTermSeries {
         System.out.println("2) Enter the number of terms in the series (second series): ");
         int n = scanner.nextInt();
 
-        StringBuilder series = new StringBuilder();
-
         double sum = 0.0;
         int divdier = 1;
         int divi = 2;
         for (int i = 0; i < n; i++) {
             if (i % 2 == 0) {
                 sum += (double) divdier / divi;
-                if (i != 0) {
-                    series.append(" + ");
-                }
-                series.append(divdier).append("/").append(divi);
-            } else {
+            }
+            else {
                 sum -= (double) divdier / divi;
-                series.append(" - ");
-                series.append(divdier).append("/").append(divi);
             }
             divdier++;
             divi *= 2;
         }
-
-        System.out.println("2) series for " + n + " terms is : " + series + " = " + sum);
+        System.out.println("(second series) Sum of the series for " + n + " terms is = " + sum);
     }
 
 }
