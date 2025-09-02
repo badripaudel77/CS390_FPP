@@ -47,7 +47,7 @@ public class QuickEmiQuote {
     }
 
     private double getYearlyInterestRate(double lower, double upper) {
-        yearlyInterestRate = random.nextDouble(lower, upper+1);
+        yearlyInterestRate = lower + (upper - lower) * Math.random(); //Khanh - fixed random double
         return yearlyInterestRate;
     }
 
