@@ -1,0 +1,19 @@
+# FPP - ComPro Group 7 - Lab 1 - Assignment for Fundamentals 
+
+This repository contains the homework solutions for **Fundamentals of Programming Practice (FPP)** – Lab 1 - Assignment for Fundamentals.
+
+---
+
+## Team Member(s)
+1. **Nguyen Khanh Tran** (ID: 619956)
+2. **Badri Paudel**      (ID: 619959) 
+
+
+---
+
+## How to Run
+
+### Using IntelliJ IDEA
+1. Open the project in IntelliJ IDEA.  
+2. Locate the Java file that contains the `main()` method you want to run.  
+3. Right-click the file → **Run 'ClassName.main()'**.  
