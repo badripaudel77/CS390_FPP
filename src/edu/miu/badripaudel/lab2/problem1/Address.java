@@ -1,4 +1,4 @@
-package edu.miu.badripaudel.lab2;
+package edu.miu.badripaudel.lab2.problem1;
 
 public class Address {
     private String street;
