@@ -49,11 +49,4 @@ public class DateUtils {
         return zonedDateTime;
     }
 
-
-    public static void main(String[] args) {
-        System.out.println(formatLocalDate(ZonedDateTime.now()));
-
-        System.out.println(convertDateWithTimeZone(ZonedDateTime.now(), "Asia/Ho_Chi_Minh"));
-    }
-
 }
