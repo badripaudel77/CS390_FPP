@@ -26,10 +26,9 @@ public class RentalTest {
         double speed = sc.nextDouble();
 
         FlightBooking flightBooking = new FlightBooking(origin, destination, distance);
-        double flightTime = flightBooking.computeFlightTime(880);
+        double flightTime = flightBooking.computeFlightTime(speed);
 
-        System.out.printf("To reach %s from %s, at the speed of %.2f KM/HR it takes approximately %.2f hours.\n",
-                flightBooking.destination(), flightBooking.origin(), speed, flightTime);
+        System.out.printf("Estimated Flight time %.2f hours.\n", flightTime);
     }
 
     private static void proceedForHotelBooking() {
@@ -44,8 +43,7 @@ public class RentalTest {
         HotelBooking hotelBooking = new HotelBooking(hotelName, numberOfNights, pricePerNight);
         double totalCost = hotelBooking.totalCost();
 
-        System.out.printf("Total cost at Hotel %s for %d number of nights at $ %.2f is %.2f.\n",
-                hotelName, numberOfNights, pricePerNight, totalCost);
+        System.out.printf("Total Hotel Cost %.2f\n", totalCost);
     }
 
     private static void proceedForCarRental() {
@@ -61,10 +59,10 @@ public class RentalTest {
 
         CarRental carRental = new CarRental(carModel, numberOfDaysToRent, pricePerDay, milesPerDay);
         System.out.printf("""
-                        To rent a car %s for %d number of days at price $ %.2f per day with estimated %.2f miles per day costs %.2f
-                        Total miles allowed for day is %.2f
+                        Total Rental Cost : %.2f
+                        Total miles : %.2f
                         """,
-                carRental.getCarModel(),numberOfDaysToRent, pricePerDay, milesPerDay, carRental.totalRentalCost(), carRental.totalMilesAllowed());
+                 carRental.totalRentalCost(), carRental.totalMilesAllowed());
     }
 
     public static void main(String[] args) throws IOException {
