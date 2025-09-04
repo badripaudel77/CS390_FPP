@@ -1,6 +1,6 @@
 package edu.miu.badripaudel.lab2.problem3;
 
-public class CarRental {
+public final class CarRental {
     private final String carModel;
     private final int days;
     private final double ratePerDay;
