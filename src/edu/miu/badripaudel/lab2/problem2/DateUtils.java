@@ -8,22 +8,23 @@ import java.time.format.DateTimeFormatter;
 
 public class DateUtils {
     public static String formatLocalDate(ZonedDateTime localDate) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(localDate.getDayOfWeek());
-        sb.append(", ");
-        sb.append(localDate.getMonth());
-        sb.append(" ");
-        sb.append(localDate.getDayOfMonth());
-        sb.append(", ");
-        sb.append(localDate.getYear());
-        sb.append(" @ ");
-        sb.append(localDate.toLocalTime().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
-        sb.append(" [");
-        sb.append(localDate.getZone());
-        sb.append("]\n");
-
-        sb.append(localDate.format(DateTimeFormatter.ofPattern("EEEE, MMMM d, YYYY @ HH:mm:ss [VV]")));
-        return sb.toString();
+//        StringBuilder sb = new StringBuilder();
+//        sb.append(localDate.getDayOfWeek());
+//        sb.append(", ");
+//        sb.append(localDate.getMonth());
+//        sb.append(" ");
+//        sb.append(localDate.getDayOfMonth());
+//        sb.append(", ");
+//        sb.append(localDate.getYear());
+//        sb.append(" @ ");
+//        sb.append(localDate.toLocalTime().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+//        sb.append(" [");
+//        sb.append(localDate.getZone());
+//        sb.append("]\n");
+//
+//        sb.append();
+//        return sb.toString();
+        return localDate.format(DateTimeFormatter.ofPattern("EEEE, MMMM d, YYYY @ HH:mm:ss @@@VV!!!")).replace("@@@","[").replace("!!!","]");
     }
 
     public static String convertDateWithTimeZone(ZonedDateTime localDate, String timeZone) {
@@ -35,6 +36,17 @@ public class DateUtils {
             return "Invalid date or time zone";
         }
         return formatLocalDate(zonedDateTime);
+    }
+
+    public static ZonedDateTime setNewTimeZone(ZonedDateTime localDate, String timeZone) {
+        //Init
+        ZonedDateTime zonedDateTime = null;
+        try {
+            zonedDateTime = localDate.withZoneSameInstant(ZoneId.of(timeZone));
+        } catch (Exception e) {
+            zonedDateTime = ZonedDateTime.ofInstant(localDate.toInstant(), ZoneId.of(timeZone));
+        }
+        return zonedDateTime;
     }
 
 
