@@ -64,7 +64,7 @@ public class RentalTest {
                         To rent a car %s for %d number of days at price $ %.2f per day with estimated %.2f miles per day costs %.2f
                         Total miles allowed for day is %.2f
                         """,
-                carModel,numberOfDaysToRent, pricePerDay, milesPerDay, carRental.totalRentalCost(), carRental.totalMilesAllowed());
+                carRental.getCarModel(),numberOfDaysToRent, pricePerDay, milesPerDay, carRental.totalRentalCost(), carRental.totalMilesAllowed());
     }
 
     public static void main(String[] args) throws IOException {

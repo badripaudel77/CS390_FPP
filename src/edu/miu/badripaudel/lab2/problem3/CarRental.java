@@ -16,6 +16,10 @@ public class CarRental {
         this.milesPerDay = milesPerDay;
     }
 
+    public String getCarModel() {
+        return carModel;
+    }
+
     public double totalRentalCost() {
         return days * ratePerDay;
     }
