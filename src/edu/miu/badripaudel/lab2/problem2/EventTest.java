@@ -46,7 +46,7 @@ public class EventTest {
     }
 
     private static void changeCurrentTimeZone() {
-        System.out.println("=======3.Change timezone======");
+        System.out.println("======= 3.Change timezone====== ");
         System.out.println("Your current timezone: " + timezone);
         Scanner input = new Scanner(System.in);
         String localZone = ZonedDateTime.now().getZone().getId();
@@ -75,51 +75,50 @@ public class EventTest {
         now = DateUtils.formatLocalDate(zonedDateTime);
 
         System.out.println("Your current timezone was changed to: " + timezone);
-
     }
 
     private static void showAllEvents() {
-        System.out.println("============2.Show all events===============");
+        System.out.println("============ 2.Show all events ===============");
         if (events.isEmpty()) {
             System.out.println("No events");
         }
         for (int i = 0; i < events.size(); i++) {
             Event ev = events.get(i);
             StringBuilder builder = new StringBuilder();
-            builder.append("*No:" + (i + 1));
-            builder.append("\n*Name:" + ev.getName());
+            builder.append("*No:").append(i + 1);
+            builder.append("\n*Name:").append(ev.getName());
 
             ZonedDateTime dateWithNewZone = DateUtils.setNewTimeZone(ev.getEventDate(), timezone);
 
-            builder.append("\n*Event date:" + DateUtils.formatLocalDate(
-                    dateWithNewZone
-            ));
-            builder.append("\nUp coming after: " + ChronoUnit.DAYS.between( ZonedDateTime.now(), dateWithNewZone) + " day(s)");
-            builder.append("\nLeap year:" + Year.of(dateWithNewZone.getYear()).isLeap());
+            builder.append("\n*Event date:").append(DateUtils.formatLocalDate(dateWithNewZone));
+            builder.append("\nUp coming after (Based on number of hours): ").append(ChronoUnit.DAYS.between(ZonedDateTime.now(), dateWithNewZone)).append(" day(s)");
+            builder.append("\nLeap year:").append(Year.of(dateWithNewZone.getYear()).isLeap());
             builder.append("\n=========================================");
             System.out.println(builder.toString());
         }
     }
 
     private static void createEvent() {
-        System.out.println("===============1.Create event===============");
+        System.out.println("=============== 1.Create event ===============");
         Scanner input = new Scanner(System.in);
         System.out.println("Enter event name: ");
         String name = input.nextLine();
-        ZonedDateTime newEventDate = null;
+        ZonedDateTime newEventDate;
         while (true) {
             System.out.println("Enter event date yyyy-MM-dd HH:mm:ss or \"Now\": ");
             try {
                 String date = input.nextLine();
                 if("now".equalsIgnoreCase(date)) {
                     newEventDate = DateUtils.setNewTimeZone(ZonedDateTime.now(), timezone);
-                }else {
+                }
+                else {
                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
                             .withZone(zonedDateTime.getZone());
                     newEventDate = ZonedDateTime.parse(date, formatter);
                 }
                 break;
-            } catch (Exception e){
+            }
+            catch (Exception e){
                 System.out.println("Invalid date.....Try again...:");
             }
         }
