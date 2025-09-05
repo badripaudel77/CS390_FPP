@@ -33,7 +33,7 @@ public class CustomerTest {
         String cityToCheck = "Chicago";
 
         for(Customer customer: customers) {
-            if(customer.getBillingAddress().getCity().equalsIgnoreCase(cityToCheck)) {
+            if(cityToCheck.equalsIgnoreCase(customer.getBillingAddress().getCity())) {
                 System.out.println(customer);
             }
         }

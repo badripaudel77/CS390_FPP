@@ -7,6 +7,13 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * @author Nguyen Khanh Tran
+ * @since 9/3/2025
+ * <p>This is the assignment for lab 2, FPP course, MIU, IA</p>
+ * Program name: <b>“Problem 1: Class & Objects”</b>
+ * <p> Members: Badri Paudel & Nguyen Khanh Tran </p>
+ */
 public class EventTest {
 
     private static ArrayList<Event> events = new ArrayList<>();
