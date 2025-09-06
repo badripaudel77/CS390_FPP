@@ -22,7 +22,7 @@ public class Problem4 {
             return numbers[0];
         }
         // recursive case
-        int rest = getMaxNumber(Arrays.copyOfRange(numbers, 1, numbers.length), 1); // TOD
+        int rest = getMaxNumber(Arrays.copyOfRange(numbers, 1, numbers.length), 1);
         return Math.max(rest, numbers[0]);
     }
 
