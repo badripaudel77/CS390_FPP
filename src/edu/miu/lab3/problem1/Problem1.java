@@ -1,7 +1,10 @@
 package edu.miu.lab3.problem1;
 
-/**
- * Problem 1
+/** Lab3 assignment
+ * Problem 1 : Using recursion, find the minimum character in the given string input.
+ * <br>
+ * If your input is “akel” in return ‘a’
+ * <p> Members: Badri Paudel & Nguyen Khanh Tran </p>
  * @author Khanh Nguyen Tran
  */
 public class Problem1 {
@@ -10,7 +13,7 @@ public class Problem1 {
         System.out.println(findMini("khanh"));
     }
 
-    private static char findMini(String s) {
+    public static char findMini(String s) {
         if (s == null || s.isBlank())
             return (char) Integer.MAX_VALUE;
         char c = s.charAt(0);
