@@ -28,13 +28,13 @@ public class Problem3 {
         return reversedNumber == number;
     }
 
-    public static int reverse(int number, int sum) {
+    public static int reverse(int number, int rev) {
         // if number is now 0, return the calculated sum (temporary sum calculated)
+        // number < 0, all digits have been considered.
         if(number <= 0) {
-            return sum;
+            return rev;
         }
-        sum = (sum * 10) + (number % 10);
-        return reverse(number / 10, sum);
+        return reverse(number / 10, ((rev * 10) + (number % 10)));
     }
 
     public static void main(String[] args) {
