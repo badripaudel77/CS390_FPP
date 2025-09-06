@@ -1,7 +1,5 @@
 package edu.miu.lab3.problem4;
 
-import java.util.Arrays;
-
 /** Lab3 assignment
  * Problem 4 :
  "Write a recursive solution to return max value from the given array.
@@ -14,19 +12,29 @@ public class Problem4 {
 
     public int getMaxNumber(int[] numbers) {
         // Empty array
-        if(numbers.length == 0) {
+        if(numbers == null || numbers.length == 0) {
             return Integer.MIN_VALUE;
         }
         // only one item
         if(numbers.length == 1) {
             return numbers[0];
         }
-        // recursive case
-        int rest = getMaxNumber(Arrays.copyOfRange(numbers, 1, numbers.length));
-        return Math.max(rest, numbers[0]);
+        // call helper function
+        int maxNumber = getMaxNumberRecursive(numbers, 0);
+        return maxNumber;
+    }
+
+    private int getMaxNumberRecursive(int[] numbers, int index) {
+        // base case, when index is equal to length - 1, it is the largest.
+        if(index == numbers.length - 1) {
+            return numbers[index];
+        }
+        // recursive case, increment the index to point to the next element in the array
+        int restMax = getMaxNumberRecursive(numbers, index+1);
+        return Math.max(restMax, numbers[index]);
     }
 
     public static void main(String[] args) {
-        System.out.println(new Problem4().getMaxNumber(new int[] { 1, 19, 1,3,4,5,66 }));
+        System.out.println(new Problem4().getMaxNumber(new int[] { 12, 101, 19, 1,3,4,5,66 }));
     }
 }
