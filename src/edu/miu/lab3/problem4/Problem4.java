@@ -12,7 +12,7 @@ import java.util.Arrays;
 
 public class Problem4 {
 
-    public int getMaxNumber(int[] numbers, int len) {
+    public int getMaxNumber(int[] numbers) {
         // Empty array
         if(numbers.length == 0) {
             return Integer.MIN_VALUE;
@@ -22,11 +22,11 @@ public class Problem4 {
             return numbers[0];
         }
         // recursive case
-        int rest = getMaxNumber(Arrays.copyOfRange(numbers, 1, numbers.length), 1);
+        int rest = getMaxNumber(Arrays.copyOfRange(numbers, 1, numbers.length));
         return Math.max(rest, numbers[0]);
     }
 
     public static void main(String[] args) {
-        System.out.println(new Problem4().getMaxNumber(new int[] { 1, 19, 1,3,4,5,66 }, 6));
+        System.out.println(new Problem4().getMaxNumber(new int[] { 1, 19, 1,3,4,5,66 }));
     }
 }
