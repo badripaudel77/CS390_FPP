@@ -1,5 +1,9 @@
 package edu.miu.lab3.problem1;
 
+/**
+ * Problem 1
+ * @author Khanh Nguyen Tran
+ */
 public class Problem1 {
     public static void main(String[] args) {
         System.out.println(findMini("akel"));
