@@ -1,4 +1,4 @@
-package edu.miu.badripaudel.lab2.problem1;
+package edu.miu.lab2.problem1;
 
 public class Customer {
     private String firstName;

@@ -1,6 +1,4 @@
-package edu.miu.badripaudel.lab2.problem2;
-
-import java.time.ZoneId;
+package edu.miu.lab2.problem2;
 
 public enum TimeZoneEnum {
     AMERICA_PANAMA("America/Panama"),

@@ -1,4 +1,4 @@
-package edu.miu.badripaudel.lab2.problem3;
+package edu.miu.lab2.problem3;
 
 public record HotelBooking(String hotelName, int nights, double pricePerNight) {
     // Get the price per night.

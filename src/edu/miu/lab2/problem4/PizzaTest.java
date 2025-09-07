@@ -1,4 +1,4 @@
-package edu.miu.badripaudel.lab2.problem4;
+package edu.miu.lab2.problem4;
 /**
  * @author Badri Paudel
  * @since 9/4/2025

@@ -1,4 +1,4 @@
-package edu.miu.badripaudel.lab2.problem3;
+package edu.miu.lab2.problem3;
 
 import java.io.BufferedReader;
 import java.io.IOException;
