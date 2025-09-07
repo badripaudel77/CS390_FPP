@@ -1,6 +1,6 @@
 # FPP - ComPro Group 5  - Assignments for Fundamentals 
 
-This repository contains the homework solutions for **Fundamentals of Programming Practice (FPP)** – Lab 1 - Assignment for Fundamentals.
+This repository contains the homework solutions for **Fundamentals of Programming Practice (FPP)** – Lab - Assignments for Fundamentals.
 
 This repository contains the homework solutions for **Fundamentals of Programming Practice (FPP)**.
 
@@ -9,7 +9,7 @@ This repository contains the homework solutions for **Fundamentals of Programmin
 ## Branches
 Branches are renamed in a way that each branch
 contains assignment for each lab. 
-Example, assignment/lab1
+Example, assignment/lab1 for lab1 assignment
 
 ---
 
