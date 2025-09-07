@@ -11,30 +11,34 @@ import java.util.Arrays;
  */
 public class Prog4 {
     public static void main(String[] args) {
-        String[] animals = {"cat", "horse","horse", "dog", "cat", "horse", "dog", "dog", "horse"};
-        String[] unique = new String[animals.length]; // stores the unique elements
-        int uniqueCount = 0;
+        String[] animals = {"cat", "horse","horse", "dog", "cat", "horse", "dog", "dog", "horse", null};
+        String[] rs = new  String[animals.length];
+        int rsIdx = 0;
+        for(int i = 0; i < animals.length; i++){
+            //Skip null
+            if(animals[i] == null) continue;
 
-        for (int i = 0; i < animals.length; i++) {
-            boolean isDupFound = false;
-            for (int j = 0; j < animals.length; j++) {
-                if(animals[i].equals(unique[j])) {
-                    isDupFound = true;
-                    break; // break the inner loop
+            //Finding flag
+            boolean isExisted = false;
+
+            for(int j = 0; j < rs.length; j++){
+                if(animals[i].equals(rs[j])){
+                    //Found
+                    isExisted = true;
+                    break;
                 }
             }
-            // check if we found the duplicate, if yes, don't add to the unique array
-            if(!isDupFound) {
-                unique[uniqueCount++] = animals[i];
+            if(!isExisted){
+                rs[rsIdx]  = animals[i];
+                rsIdx++;
             }
         }
-        // create final array (without nulls)
-        String[] finalArr = new String[uniqueCount];
-        for (int i = 0; i < uniqueCount; i++) {
-            finalArr[i] = unique[i];
+
+        for(int i = 0; i < rs.length; i++){
+            if(rs[i] != null){
+                System.out.println(rs[i]);
+            }
         }
 
-        System.out.println("Initial Array : " + Arrays.toString(animals));
-        System.out.println("Final Array : " + Arrays.toString(finalArr));
     }
 }
