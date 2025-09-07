@@ -2,8 +2,6 @@
 
 This repository contains the homework solutions for **Fundamentals of Programming Practice (FPP)** – Lab 1 - Assignment for Fundamentals.
 
-# FPP - ComPro Group 7
-
 This repository contains the homework solutions for **Fundamentals of Programming Practice (FPP)**.
 
 ---
@@ -16,11 +14,11 @@ Example, assignment/lab1
 ---
 
 ## Team Member(s)
-1. **Nguyen Khanh Tran** (ID: 619956)  
-2. **Badri Paudel** (ID: 619959)  
+1. **Nguyen Khanh Tran** (ID: 619956)
+2. **Badri Paudel**      (ID: 619959) 
 
 
----
+--------
 
 ## How to Run
 
