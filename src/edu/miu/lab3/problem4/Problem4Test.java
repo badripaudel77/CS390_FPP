@@ -23,9 +23,10 @@ class Problem4Test {
         int maxNumber = problem4.getMaxNumber(new int[]{-10, -2, -43, -44});
         assertEquals(-2, maxNumber);
     }
+
     @Test
     void getMaxNumberWhenArrayIsEmpty() {
-        int maxNumber = problem4.getMaxNumber(new int[]{});
-        assertEquals(Integer.MIN_VALUE, maxNumber);
+        Problem4 p = new Problem4();
+        assertThrows(IllegalArgumentException.class, () -> p.getMaxNumber(new int[]{}));
     }
 }

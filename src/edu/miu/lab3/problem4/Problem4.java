@@ -13,19 +13,18 @@ public class Problem4 {
     public int getMaxNumber(int[] numbers) {
         // Empty array
         if(numbers == null || numbers.length == 0) {
-            return Integer.MIN_VALUE;
+            throw new IllegalArgumentException("Array must not be null or empty");
         }
         // only one item
         if(numbers.length == 1) {
             return numbers[0];
         }
         // call helper function
-        int maxNumber = getMaxNumberRecursive(numbers, 0);
-        return maxNumber;
+        return getMaxNumberRecursive(numbers, 0);
     }
 
     private int getMaxNumberRecursive(int[] numbers, int index) {
-        // base case, when index is equal to length - 1, it is the largest.
+        // base case, when index is equal to length - 1, it is the last.
         if(index == numbers.length - 1) {
             return numbers[index];
         }
