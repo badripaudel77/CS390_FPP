@@ -14,8 +14,12 @@ public class Problem1 {
     }
 
     public static char findMini(String s) {
-        if (s == null || s.isBlank())
-            return (char) Integer.MAX_VALUE;
+        if (s == null || s.isEmpty()) {
+            throw new IllegalArgumentException("String must not be null or empty");
+        }
+        if (s.length() == 1) {
+            return s.charAt(0);
+        }
         char c = s.charAt(0);
         char next = findMini(s.substring(1));
         if (c < next) {
