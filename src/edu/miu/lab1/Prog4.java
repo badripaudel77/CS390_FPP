@@ -1,7 +1,4 @@
-package edu.miu.badripaudel.lab1;
-
-import java.util.ArrayList;
-import java.util.Arrays;
+package edu.miu.lab1;
 
 /**
  * @author Badri Paudel
