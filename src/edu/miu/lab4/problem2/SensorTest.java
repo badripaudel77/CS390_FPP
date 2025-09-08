@@ -1,9 +1,5 @@
 package edu.miu.lab4.problem2;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
 public class SensorTest {
     public static void main(String[] args) {
         LightSensor ls = new LightSensor("Living room", 100);
