@@ -1,0 +1,20 @@
+package edu.miu.lab4.problem2;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class SensorTest {
+    public static void main(String[] args) {
+        LightSensor ls = new LightSensor("Living room", 100);
+        SoundSensor soundSensor = new SoundSensor("Back yard", 90);
+        SoundSensor soundSensor2 = new SoundSensor("Living room", 0);
+        TemperatureSensor temperatureSensor = new TemperatureSensor("Living room",  0);
+        TemperatureSensor temperatureSensor2 = new TemperatureSensor("Living room",  90);
+
+        SensorInterface[] arr = {ls, soundSensor, soundSensor2, temperatureSensor, temperatureSensor2};
+        for(SensorInterface sensor : arr) {
+            System.out.println(sensor.toString());
+        }
+    }
+}
