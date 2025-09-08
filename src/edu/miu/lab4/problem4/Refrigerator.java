@@ -1,6 +1,6 @@
 package edu.miu.lab4.problem4;
 
-public class Refrigerator extends HouseholdMachine {
+public class Refrigerator implements HouseholdMachine {
     private final int temperature;
     public Refrigerator(int temperature) {
         this.temperature = temperature;

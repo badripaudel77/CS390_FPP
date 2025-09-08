@@ -1,6 +1,6 @@
 package edu.miu.lab4.problem4;
 
-public class Microwave extends HouseholdMachine {
+public class Microwave implements HouseholdMachine {
     private final int powerLevel;
 
     public Microwave(int powerLevel) {

@@ -1,6 +1,6 @@
 package edu.miu.lab4.problem4;
 
-public class WashingMachine extends HouseholdMachine {
+public class WashingMachine implements HouseholdMachine {
     private final int loadCapacity;
 
     public WashingMachine(int loadCapacity) {
