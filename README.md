@@ -1,4 +1,4 @@
-# FPP - ComPro Group 7
+# FPP - ComPro Group 5
 
 This repository contains the homework solutions for **Fundamentals of Programming Practice (FPP)**.
 
