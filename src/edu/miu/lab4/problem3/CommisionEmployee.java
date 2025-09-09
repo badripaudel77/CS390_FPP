@@ -21,15 +21,23 @@ public class CommisionEmployee extends Employee {
         return commisionRate;
     }
 
+    public void setGrossSales(double grossSales) {
+        this.grossSales = grossSales;
+    }
+
+    public void setCommisionRate(double commisionRate) {
+        this.commisionRate = commisionRate;
+    }
+
     @Override
     public double getPayment() {
-        return this.grossSales * this.commisionRate;
+        return this.grossSales * ( this.commisionRate / 100);
     }
 
 
     @Override
     public String toString() {
         return "[ State of CommisionEmployee Instance => Gross Sales : " + this.grossSales +
-                "Commision Rate : " + this.commisionRate + "]\n";
+                " Commision Rate : " + this.commisionRate  + "%, Payment : " + this.getPayment() + "]\n";
     }
 }

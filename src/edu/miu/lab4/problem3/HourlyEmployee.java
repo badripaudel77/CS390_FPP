@@ -22,10 +22,19 @@ public class HourlyEmployee extends Employee {
         return hours;
     }
 
+    public void setWage(double wage) {
+        this.wage = wage;
+    }
+
+    public void setHours(double hours) {
+        this.hours = hours;
+    }
+
     @Override
     public String toString() {
         return "[ State of HourlyEmployee Instance => Total Hours : " + this.getHours() +
-                " Total Wage : " + this.getWage() +
+                ", Total Wage : " + this.getWage() +
+                ", Payment : " + this.getPayment() +
                 "]\n";
     }
 }

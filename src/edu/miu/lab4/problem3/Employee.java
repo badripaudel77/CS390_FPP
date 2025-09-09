@@ -5,7 +5,7 @@ public abstract class Employee {
     private String lastName;
     private String socialSecurityNumber;
 
-    abstract public double getPayment();
+
 
     public Employee() {
     }
@@ -39,4 +39,11 @@ public abstract class Employee {
     public void setSocialSecurityNumber(String socialSecurityNumber) {
         this.socialSecurityNumber = socialSecurityNumber;
     }
+
+
+    /**
+     * get Payment
+     * @return payment double
+     */
+    abstract public double getPayment();
 }

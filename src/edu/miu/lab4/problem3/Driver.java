@@ -6,12 +6,12 @@ public class Driver {
     public static void main(String[] args) {
         HourlyEmployee hourlyEmployee = new HourlyEmployee(20, 10);
         SalariedEmployee salariedEmployee = new SalariedEmployee(400);
-        CommisionEmployee commisionEmployee = new CommisionEmployee(5_000, 5);
-        BasePlusCommisionEmployee basePlusCommisionEmployee = new BasePlusCommisionEmployee(10_000);
+        CommisionEmployee commisionEmployee = new CommisionEmployee(5_000, 10);
+        BasePlusCommisionEmployee basePlusCommisionEmployee = new BasePlusCommisionEmployee(10_000,10,100);
 
         Employee[] employees = { hourlyEmployee, salariedEmployee, commisionEmployee, basePlusCommisionEmployee};
 
-        Employee[] salaryList = findSalaryList(employees, 20000);
+        Employee[] salaryList = findSalaryList(employees, 20000000);
         System.out.println("Salary List : ");
         System.out.println(Arrays.toString(salaryList));
     }

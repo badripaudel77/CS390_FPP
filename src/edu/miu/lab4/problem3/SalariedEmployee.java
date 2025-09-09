@@ -10,19 +10,21 @@ public class SalariedEmployee extends Employee {
 
     @Override
     public double getPayment() {
-        return 0;
+        return this.weeklySalary;
     }
 
-    public double getBaseSalary() {
+    public double getWeeklySalary() {
         return weeklySalary;
     }
 
-    public void setBaseSalary(double weeklySalary) {
+    public void setWeeklySalary(double weeklySalary) {
         this.weeklySalary = weeklySalary;
     }
 
     @Override
     public String toString() {
-        return "[ State of SalariedEmployee Instance => Total Weekly Salary : " + this.weeklySalary + "]\n";
+        return "[ State of SalariedEmployee Instance => Total Weekly Salary : " + getWeeklySalary() + "" +
+                " Payment: " + getPayment() +
+                "]\n";
     }
 }
