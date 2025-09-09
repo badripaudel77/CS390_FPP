@@ -4,6 +4,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class LightSensor implements SensorInterface {
+    private String location;
+    private LocalDateTime lastUpdated;
+    private Integer lightlLevel;
+
     public LightSensor() {
     }
 
@@ -13,10 +17,6 @@ public class LightSensor implements SensorInterface {
     }
 
     //Instance fields
-    private String location;
-    private LocalDateTime lastUpdated;
-    private Integer lightlLevel;
-
     @Override
     public String getSensorType() {
         return "Light Sensor";
@@ -33,7 +33,7 @@ public class LightSensor implements SensorInterface {
     }
 
     @Override
-    public LocalDateTime getLastUpdate() {
+    public LocalDateTime getLastUpdated() {
         this.lastUpdated = LocalDateTime.now();
         return this.lastUpdated;
     }
@@ -54,12 +54,12 @@ public class LightSensor implements SensorInterface {
     public String toString() {
         return String.format("""
                     Sensor Type: %s
-                    Reading: %f
+                    Reading: %.1f
                     Location: %s
                     Last Updated: %s
                     Action: %s
                 """, this.getSensorType(), this.getReading(), this.getLocation()
-                , this.getLastUpdate().format(DateTimeFormatter.ofPattern("HH:MM a")), this.performAction())
+                , this.getLastUpdated().format(DateTimeFormatter.ofPattern("HH:MM a")), this.performAction())
                 ;
     }
 }

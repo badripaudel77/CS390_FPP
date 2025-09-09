@@ -1,26 +1,22 @@
 package edu.miu.lab4.problem2;
 
-import org.junit.platform.commons.util.StringUtils;
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class TemperatureSensor implements SensorInterface {
-
-    public TemperatureSensor() {
-
-    }
-
     //Instance fields
     private String location;
     private LocalDateTime lastUpdated;
     private Integer temperature;
 
+    public TemperatureSensor() {
+
+    }
+
     public TemperatureSensor(String location,Integer temperature) {
         this.location = location;
         this.temperature = temperature;
     }
-
 
     @Override
     public String getSensorType() {
@@ -38,7 +34,7 @@ public class TemperatureSensor implements SensorInterface {
     }
 
     @Override
-    public LocalDateTime getLastUpdate() {
+    public LocalDateTime getLastUpdated() {
         this.lastUpdated = LocalDateTime.now();
         return this.lastUpdated;
     }
@@ -67,12 +63,12 @@ public class TemperatureSensor implements SensorInterface {
     public String toString() {
         return String.format("""
                     Sensor Type: %s
-                    Reading: %f
+                    Reading: %.1f
                     Location: %s
                     Last Updated: %s
                     Action: %s
                 """, this.getSensorType(), this.getReading(), this.getLocation()
-                    , this.getLastUpdate().format(DateTimeFormatter.ofPattern("HH:MM a")), this.performAction())
+                    , this.getLastUpdated().format(DateTimeFormatter.ofPattern("HH:MM a")), this.performAction())
                 ;
     }
 }

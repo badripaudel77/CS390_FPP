@@ -30,7 +30,7 @@ public interface SensorInterface {
      * getLastUpdated() – Return the system current time.
      * @return system current time LocalDateTime
      */
-    public LocalDateTime getLastUpdate();
+    public LocalDateTime getLastUpdated();
 
     /**
      * String performAction(); - Return the action taken based on the Sensor alert
