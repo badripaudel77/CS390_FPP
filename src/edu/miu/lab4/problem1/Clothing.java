@@ -29,6 +29,7 @@ public class Clothing extends Product {
     @Override
     public String toString() {
         return "[ State of Clothing Instance => Cloth Branch : " + this.getBrand() +
+                ", Base price : " + this.getPrice() +
                 ", Discount: " + this.getDiscount() + "% " +
                 ", Discounted price : " + this.getPrice() +
                 "]\n";
