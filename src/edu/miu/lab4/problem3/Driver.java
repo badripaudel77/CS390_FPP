@@ -22,6 +22,7 @@ public class Driver {
         }
         int count = 0;
         for(Employee e: col) {
+            if (e == null) continue;
             if(e.getPayment() < salary) {
                 count++;
             }
@@ -29,6 +30,7 @@ public class Driver {
         Employee[] filteredEmployee = new Employee[count];
         int i = 0;
         for (Employee employee: col) {
+            if (employee == null) continue;
             if(employee.getPayment() < salary) {
                 filteredEmployee[i++] = employee;
             }
