@@ -9,7 +9,7 @@ public class Driver {
         CommisionEmployee commisionEmployee = new CommisionEmployee(5_000, 5);
         BasePlusCommisionEmployee basePlusCommisionEmployee = new BasePlusCommisionEmployee(10_000);
 
-        Employee[] employees = { hourlyEmployee, salariedEmployee, commisionEmployee, basePlusCommisionEmployee };
+        Employee[] employees = { hourlyEmployee, salariedEmployee, commisionEmployee, basePlusCommisionEmployee};
 
         Employee[] salaryList = findSalaryList(employees, 20000);
         System.out.println("Salary List : ");
