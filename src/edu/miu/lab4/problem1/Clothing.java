@@ -5,9 +5,10 @@ public class Clothing extends Product {
     private final String brand;
     private final int discount;
 
-    public Clothing(String brand, int discount) {
+    public Clothing(String brand, int discount, double price) {
         this.brand = brand;
         this.discount = discount;
+        super.setPrice(price);
     }
 
     public String getBrand() {
@@ -18,6 +19,8 @@ public class Clothing extends Product {
         return discount;
     }
 
+
+
     @Override
     public double getPrice() {
         return super.getPrice() - (super.getPrice() * this.discount / 100);
@@ -26,7 +29,8 @@ public class Clothing extends Product {
     @Override
     public String toString() {
         return "[ State of Clothing Instance => Cloth Branch : " + this.getBrand() +
-                " Discount : " + this.getDiscount() +
+                ", Discount: " + this.getDiscount() + "% " +
+                ", Discounted price : " + this.getPrice() +
                 "]\n";
     }
 }

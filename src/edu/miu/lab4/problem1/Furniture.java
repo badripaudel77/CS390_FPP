@@ -4,9 +4,10 @@ public class Furniture extends Product {
     private final String material;
     private final double shippingCost;
 
-    public Furniture(String material, double shippingCost) {
-        this.material = material;
+    public Furniture(MaterialType material, double shippingCost, double price) {
+        this.material = material.toString();
         this.shippingCost = shippingCost;
+        super.setPrice(price);
     }
 
     public String getMaterial() {
@@ -25,7 +26,9 @@ public class Furniture extends Product {
     @Override
     public String toString() {
         return "[ State of Furniture Instance => Material : " + this.material +
-                " shipping cost : " + this.shippingCost +
+                ", Price without shipping cost: " + super.getPrice() +
+                ", shipping cost : " + this.shippingCost +
+                ", Total cost : " + this.getPrice() +
                 "]\n";
     }
 }
