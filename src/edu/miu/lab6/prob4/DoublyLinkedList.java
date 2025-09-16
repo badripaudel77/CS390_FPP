@@ -90,7 +90,7 @@ public class DoublyLinkedList {
         if (n.value != null) {
             //Khanh fixed format
             if(!sb.isEmpty()) {
-                sb.append(" " + n.value);
+                sb.append(" ").append(n.value);
             } else  {
                 sb.append(n.value);
             }
