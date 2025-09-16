@@ -1,6 +1,6 @@
-package prob2;
+package edu.miu.lab6.prob2;
 
-public final class Teacher{
+public final class Teacher implements EmployeeData {
 	private double bonus;
 	private String name;
 	private double salary;
@@ -9,7 +9,7 @@ public final class Teacher{
 		this.salary = salary;
 		this.bonus = bonus;
 	}
-	
+    @Override
 	public double getSalary() {
 		return salary + bonus;
 	}
