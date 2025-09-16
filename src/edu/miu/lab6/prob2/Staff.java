@@ -1,6 +1,6 @@
-package prob2;
+package edu.miu.lab6.prob2;
 
-public final class Staff {
+public final class Staff implements EmployeeData {
 	private String name;
 	private double salary;
 	private int numDependants;
@@ -13,6 +13,7 @@ public final class Staff {
 	public String getName() {
 		return name;
 	}
+    @Override
 	public double getSalary() {
 		return salary;
 	}

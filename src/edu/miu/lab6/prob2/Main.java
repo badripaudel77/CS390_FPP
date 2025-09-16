@@ -1,4 +1,4 @@
-package prob2;
+package edu.miu.lab6.prob2;
 
 import java.util.*;
 public class Main {
@@ -23,17 +23,21 @@ public class Main {
 		
 		//Implementation steps
 		//Step 1: implement the combine method, to combine the two lists
-		List/*<specify type>*/ combined = combine(staff, teachers);
+		List<EmployeeData> combined = combine(staff, teachers);
 		
 		//Step 2: pass the combined list to computeSumOfSalaries
 		double salarySum = Statistics.computeSumOfSalaries(combined);
 		System.out.println(salarySum);
-		
 	}
 	
 	//IMPLEMENT
-	public static List/*<specify type>*/ combine(List<Staff> staff, List<Teacher> teachers) {
-		return new ArrayList/*<specify type>*/();
+	public static List<EmployeeData> combine(List<Staff> staff, List<Teacher> teachers) {
+        List<EmployeeData> combined = new ArrayList<>();
+
+        combined.addAll(staff);
+        combined.addAll(teachers);
+
+        return combined;
 	}
 
 }
