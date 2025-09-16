@@ -1,0 +1,49 @@
+Problem 1: User based Array Implementation of your MyStringList
+
+Implement the following methods inside MyStringList.java file. Must validate the method arguments to avoid any runtime errors like NullPointer, ArrayIndexOutofBounds Exceptions.
+
+Method 1: public int indexOf(String s);
+
+indexOf(String s)
+ - Return the position (index) of the first occurrence of s in the list.
+ - If s is not found, return -1.
+
+
+Method 2: public String removeAt(int index);
+
+removeAt(int index)
+- Remove the element at the given position.
+- Shift all elements on the right to fill the gap.
+- Return the removed element.
+- If index is invalid, return null.
+ 
+Method 3: public void clear()
+
+clear()
+- Remove all elements from the list so that it becomes empty.
+- Set each element in the underlying array to null.
+- reset the size of the list to 0.
+- After calling clear():
+  - size() must return 0.
+  - toString() should print an empty list like [].
+
+Method 4: public void set(int index, String s);
+
+set(int index, String s)
+- Replace the element at position index with s.
+- Return the old element that was replaced.
+- If index is invalid, return null.
+
+Method 5: public boolean containsAll(MyStringList other);
+
+containsAll(MyStringList other)
+- Return true if the current list contains every element of other.
+- Order doesn’t matter.
+- Return false if even one element is missing.
+
+Method 6: public MyStringList subList(int start, int end);
+
+subList(int start, int end)
+- Return a new MyStringList containing elements from index start to end - 1.
+- If indices are invalid, return an empty list.
+
