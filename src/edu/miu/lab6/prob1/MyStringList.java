@@ -1,4 +1,4 @@
-
+package edu.miu.lab6.prob1;
 
 import java.util.Arrays;
 

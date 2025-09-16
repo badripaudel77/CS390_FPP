@@ -1,4 +1,6 @@
-package lesson8.prob4;
+package edu.miu.lab6.prob3;
+
+import java.util.Objects;
 
 public class Order {
     private String orderId;
@@ -12,17 +14,47 @@ public class Order {
     }
 
     // getters/setters
+    public String getOrderId() {
+        return orderId;
+    }
 
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public double getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(double totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
+    // g) Override equals() in Order.java (consistent equals implementation required).
     @Override
     public boolean equals(Object o) {
         // implement: same orderId => equal
-        return false;
+        if (this == o) return true;
+        if(o==null) return false;
+        if (!(o instanceof Order order)) return false;
+
+        return  Objects.equals(orderId, order.orderId);
     }
 
     @Override
     public int hashCode() {
         // consistent with equals
-        return 0;
+        int hashCode = this.orderId.hashCode();
+        // System.out.println("hash " + hashCode);
+        return hashCode;
     }
 
     @Override
