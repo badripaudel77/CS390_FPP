@@ -46,7 +46,9 @@ public class OrderTest {
 
         // i ) sort that result by customerName (A→Z)
         List<Order> orderList = listMoreThan50(orders);
-        Collections.sort(orderList, Comparator.comparing(Order::getCustomerName));
+        Comparator<String> safeStringComparator =
+                Comparator.nullsFirst(String::compareToIgnoreCase);
+        Collections.sort(orderList, Comparator.comparing(Order::getCustomerName, safeStringComparator));
         printList(orderList, "Printing after Sorting by customer name of returned result : ");
 
         // Check if two orders are equal
