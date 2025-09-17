@@ -6,6 +6,7 @@ public class BrowserHistory {
     private final Stack<String> backStack;
     private final Stack<String> forwardStack;
     private String current;
+
     public BrowserHistory(String s) {
         current = s;
         backStack = new Stack<>();
@@ -19,7 +20,7 @@ public class BrowserHistory {
     }
 
     public void back() {
-        if(backStack.empty()) {
+        if (backStack.empty()) {
             System.out.println("No history to go back to.");
             return;
         }
@@ -29,7 +30,7 @@ public class BrowserHistory {
     }
 
     public void forward() {
-        if(forwardStack.empty()) {
+        if (forwardStack.empty()) {
             System.out.println("No forward history.");
             return;
         }
