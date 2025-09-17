@@ -16,6 +16,7 @@ public class BrowserHistory {
     public void visit(String s) {
         backStack.push(current);
         current = s;
+        forwardStack.clear();
         System.out.println("Visited: " + s);
     }
 
