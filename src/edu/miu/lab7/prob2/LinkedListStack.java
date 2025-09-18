@@ -2,6 +2,7 @@ package edu.miu.lab7.prob2;
 
 /**
  * Problem 2 [User Defined Stack using Linked list] - Singly Linked List
+ *
  * @author Badri Paudel
  * Members(Group 5) : Badri & Khanh
  */
@@ -15,25 +16,23 @@ public class LinkedListStack {
     }
 
     public void push(Integer data) {
-        if(data == null) {
+        if (data == null) {
             return;
         }
         System.out.println("Adding " + data + " to the stack.");
         Node node = new Node(data);
-        if (this.top != null) {
-            node.next = top;
-        }
+        node.next = top;
         this.top = node;
         size++;
     }
 
     public Integer pop() {
-        if(isEmpty()) {
+        if (isEmpty()) {
             System.out.println("Stack is empty.");
             return null;
         }
-        System.out.println("Popping the element off the stack : ");
         Node node = this.top;
+        System.out.println("Popping the element off the stack : " + node.data);
         top = this.top.next;
         size--;
         return node.data;
@@ -54,24 +53,28 @@ public class LinkedListStack {
 
     @Override
     public String toString() {
+        //Check null
+        if (isEmpty() || size == 0) {
+            return "[]";
+        }
         StringBuilder stackData = new StringBuilder("[");
         System.out.println("Printing the stack : ");
-        if(this.top == null || size == 0) {
-            stackData.append("]");
-            return stackData.toString();
-        }
         Node temp = this.top;
-        while(temp.next != null) {
-            stackData.append(temp.data).append(" -> ");
+        while (temp != null) {
+            stackData.append(temp.data);
+            if (temp.next != null) {
+                stackData.append(" -> ");
+            }
             temp = temp.next;
         }
-        stackData.append(temp.data).append("]");
+        stackData.append("]");
         return stackData.toString();
     }
 
     class Node {
         Integer data;
         Node next;
+
         public Node(Integer data) {
             this.data = data;
             this.next = null;
