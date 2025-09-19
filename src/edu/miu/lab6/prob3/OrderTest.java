@@ -15,12 +15,14 @@ public class OrderTest {
         Order o3 = new Order("ORD003", "Alice", 250.75);
         Order o4 = new Order("ORD004", "Diana", 300.00);
         Order o5 = new Order("ORD005", "Ethan", 450.25);
-        
+        Order o6 = new Order("ORD005", "Ethan", 450.25);
+
         orders.add(o1);
         orders.add(o2);
         orders.add(o3);
         orders.add(o4);
         orders.add(o5);
+        orders.add(o6);
         printList(orders, "Printing after adding five objects : ");
 
         //  Delete an object by instance (pass an Order you previously added).
@@ -41,14 +43,16 @@ public class OrderTest {
         printList(orders, "Printing after Updating the oder using set at position 1: ");
 
         // h) Sort by totalAmount (ascending) using a Comparator that’s consistent with equals. Print the sorted list.
-        Collections.sort(orders, (order1, order2) -> Double.compare(order1.getTotalAmount(), order2.getTotalAmount()));
+        orders.sort(Comparator.comparing(Order::getTotalAmount, Comparator.nullsFirst(Double::compareTo))
+                .thenComparing(Order::getCustomerName, Comparator.nullsFirst(String::compareTo))
+                .thenComparing(Order::getOrderId, Comparator.nullsFirst(String::compareTo)));
         printList(orders, "Printing after sorting by total amount :");
 
         // i ) sort that result by customerName (A→Z)
         List<Order> orderList = listMoreThan50(orders);
-        Comparator<String> safeStringComparator =
-                Comparator.nullsFirst(String::compareToIgnoreCase);
-        Collections.sort(orderList, Comparator.comparing(Order::getCustomerName, safeStringComparator));
+        orderList.sort(Comparator.comparing(Order::getCustomerName, Comparator.nullsFirst(String::compareTo))
+                .thenComparing(Order::getTotalAmount, Comparator.nullsFirst(Double::compareTo))
+                .thenComparing(Order::getOrderId, Comparator.nullsFirst(String::compareTo)));
         printList(orderList, "Printing after Sorting by customer name of returned result : ");
 
         // Check if two orders are equal

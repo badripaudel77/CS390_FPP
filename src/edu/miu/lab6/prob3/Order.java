@@ -46,7 +46,9 @@ public class Order {
         if(o==null) return false;
         if (!(o instanceof Order order)) return false;
 
-        return  Objects.equals(orderId, order.orderId);
+        return  Objects.equals(totalAmount, order.totalAmount)
+                && Objects.equals(customerName, order.customerName)
+                && Objects.equals(orderId, order.orderId);
     }
 
     @Override
