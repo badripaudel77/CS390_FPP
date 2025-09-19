@@ -1,4 +1,4 @@
-package prob1;
+package edu.miu.lab8.Prob2;
 
 import java.util.Arrays;
 import java.util.List;

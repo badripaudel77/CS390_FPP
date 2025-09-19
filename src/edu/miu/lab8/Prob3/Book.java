@@ -1,4 +1,4 @@
-package lesson11.prob2;
+package edu.miu.lab8.Prob3;
 
 class Book {
     private String ISBN;
@@ -23,6 +23,7 @@ class Book {
     }
     @Override
     public String toString() {
+        //Java 21  (Preview)
         return STR."Book{ISBN='\{ISBN}', title='\{title}', author='\{author}', isBorrowed=\{isBorrowed}}";
     }
 }
