@@ -43,16 +43,26 @@ public class OrderTest {
         printList(orders, "Printing after Updating the oder using set at position 1: ");
 
         // h) Sort by totalAmount (ascending) using a Comparator that’s consistent with equals. Print the sorted list.
-        orders.sort(Comparator.comparing(Order::getTotalAmount, Comparator.nullsFirst(Double::compareTo))
-                .thenComparing(Order::getCustomerName, Comparator.nullsFirst(String::compareTo))
-                .thenComparing(Order::getOrderId, Comparator.nullsFirst(String::compareTo)));
+        orders.sort(
+                Comparator.nullsFirst(
+                        Comparator.comparing(Order::getTotalAmount, Comparator.nullsFirst(Double::compare))
+                                .thenComparing(Order::getCustomerName, Comparator.nullsFirst(String::compareTo))
+                                .thenComparing(Order::getOrderId, Comparator.nullsFirst(String::compareTo))
+                )
+        );
+
         printList(orders, "Printing after sorting by total amount :");
 
         // i ) sort that result by customerName (A→Z)
         List<Order> orderList = listMoreThan50(orders);
-        orderList.sort(Comparator.comparing(Order::getCustomerName, Comparator.nullsFirst(String::compareTo))
-                .thenComparing(Order::getTotalAmount, Comparator.nullsFirst(Double::compareTo))
-                .thenComparing(Order::getOrderId, Comparator.nullsFirst(String::compareTo)));
+        orderList.sort(
+                Comparator.nullsFirst(
+                        Comparator.comparing(Order::getCustomerName, Comparator.nullsFirst(String::compareTo))
+                                .thenComparing(Order::getOrderId, Comparator.nullsFirst(String::compareTo))
+                                    .thenComparing(Order::getTotalAmount,Comparator.nullsFirst(Double::compare))
+                )
+        );
+
         printList(orderList, "Printing after Sorting by customer name of returned result : ");
 
         // Check if two orders are equal
