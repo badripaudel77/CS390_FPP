@@ -20,10 +20,7 @@ public class EmployeeAdmin {
                 filteredEmployees.add(employee);
             }
         }
-        Collections.sort(filteredEmployees, Comparator.comparing(Employee::getSsn, Comparator.nullsFirst(String::compareTo)));
-        // NOTE: Since ssn is always given unique, no two Employee will have same ssn, it is not required to use all fields while comparing.
-        // Collections.sort(filteredEmployees, Comparator.comparing(Employee::getSsn).thenComparing(Employee::getName).thenComparing(Employee::getSalary));
-
+        Collections.sort(filteredEmployees, new EmployeeComparator());
 		return filteredEmployees;
 	}
 }
