@@ -24,10 +24,6 @@ public class Test {
 		results[0] = (map.get(pierre).equals(s));
 		results[1] = map.containsKey(richard);
 		System.out.println((Arrays.equals(expectedOutput, results) ? "pass" : "fail"));
-		
-		
-
-
 	}
 
 }
