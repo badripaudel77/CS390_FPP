@@ -53,10 +53,7 @@ public class Order {
 
     @Override
     public int hashCode() {
-        // consistent with equals
-        int hashCode = this.orderId.hashCode();
-        // System.out.println("hash " + hashCode);
-        return hashCode;
+        return Objects.hash(orderId, customerName, totalAmount);
     }
 
     @Override
