@@ -23,7 +23,11 @@ class Book {
     }
     @Override
     public String toString() {
-        //Java 21  (Preview)
-        return STR."Book{ISBN='\{ISBN}', title='\{title}', author='\{author}', isBorrowed=\{isBorrowed}}";
+        return "Book { " +
+                "ISBN='" + ISBN + '\'' +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", isBorrowed=" + isBorrowed +
+                " }";
     }
 }
