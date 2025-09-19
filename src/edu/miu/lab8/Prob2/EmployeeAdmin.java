@@ -1,7 +1,6 @@
 package edu.miu.lab8.Prob2;
 
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class EmployeeAdmin {
 	
@@ -13,8 +12,18 @@ public class EmployeeAdmin {
 	*/
 	public static List<Employee> prepareReport(HashMap<String, Employee> table, List<String> socSecNums) {
 		//IMPLEMENT
-		return null;
-		
+        List<Employee> filteredEmployees = new ArrayList<>();
+
+        for(String ssn: socSecNums) {
+            var employee = table.get(ssn);
+            if(employee != null && employee.getSalary() > 80_000) {
+                filteredEmployees.add(employee);
+            }
+        }
+        Collections.sort(filteredEmployees, Comparator.comparing(Employee::getSsn, Comparator.nullsFirst(String::compareTo)));
+        // NOTE: Since ssn is always given unique, no two Employee will have same ssn, it is not required to use all fields while comparing.
+        // Collections.sort(filteredEmployees, Comparator.comparing(Employee::getSsn).thenComparing(Employee::getName).thenComparing(Employee::getSalary));
+
+		return filteredEmployees;
 	}
-	
 }
