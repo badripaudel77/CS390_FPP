@@ -1,5 +1,7 @@
 package edu.miu.lab9.prob3;
 
+import java.util.EmptyStackException;
+
 public class MyStack {
     private Integer[] data;
     private int top;
@@ -13,19 +15,31 @@ public class MyStack {
 
     // Push element to stack (no checks yet)
     public void push(Integer item) {
+        if (item == null) {
+            throw new NullPointerException("Null values are not allowed.");
+        }
+        if (top == data.length - 1) {
+            throw new IllegalStateException("Stack Overflow: cannot push, stack is full.");
+        }
         top++;
         data[top] = item;
     }
 
     // Pop element from stack (no checks yet)
     public Integer pop() {
+        if (top == -1) {
+            throw new EmptyStackException(); // API exception for underflow
+        }
         Integer item = data[top];
-        top--;
+        data[top--] = null;
         return item;
     }
 
     // Peek top element (no checks yet)
     public Integer peek() {
+        if (top == -1) {
+            throw new EmptyStackException(); // API exception for underflow
+        }
         return data[top];
     }
 

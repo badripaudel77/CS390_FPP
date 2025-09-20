@@ -17,10 +17,11 @@ public class TestStack {
         System.out.println("Stack: " + stack);
 
         // Uncomment later when exceptions are implemented
-        // stack.push(40);            // should cause overflow
-        // stack.push(null);          // should cause null not allowed
-        // stack.pop(); stack.pop();  // empty now
-        // stack.pop();               // should cause underflow
-        // stack.peek();              // should cause underflow
+         stack.push(35);            // add-one more because one is already popped.
+         stack.push(40);            // should cause overflow
+         stack.push(null);          // should cause null not allowed
+         stack.pop(); stack.pop(); stack.pop(); // empty now
+         stack.pop();               // should cause underflow
+         stack.peek();              // should cause underflow
     }
 }

@@ -11,14 +11,20 @@ public class CustomerAccount {
     }
 
     public boolean deposit(double amount) {
-        if (amount > 0) {
-            balance += amount;
-            return true;
+        if(amount < 0) {
+            throw new IllegalArgumentException("Deposit Amount Cannot be negative");
         }
-        return false;
+        balance += amount;
+        return true;
     }
 
     public boolean withdraw(double amount) {
+        if(amount > balance) {
+            throw new AccountException("Insufficient funds! Withdrawal amount exceeds balance.");
+        }
+        if(balance - amount < 100) {
+            throw new AccountException("Low balance warning! Balance cannot go below $100.");
+        }
         if (amount > 0 && amount <= balance) {
             balance -= amount;
             return true;
