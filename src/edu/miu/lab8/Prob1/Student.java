@@ -1,5 +1,7 @@
 package edu.miu.lab8.Prob1;
 
+import java.util.Objects;
+
 public class Student {
 	private String firstName;
 	private String lastName;
@@ -27,13 +29,18 @@ public class Student {
 	public String toString() {
 		return "[" + firstName + " " + lastName + "]";
 	}
-	
-	@Override
-	public boolean equals(Object ob) {
-		if(ob == null) return false;
-		if(ob.getClass() != Student.class) return false;
-		Student s = (Student)ob;
-		return s.firstName.equals(firstName) && s.lastName.equals(lastName);
-	}
+
+    @Override
+    public boolean equals(Object ob) {
+        if (this == ob) return true;
+        if (!(ob instanceof Student s)) return false;
+        return Objects.equals(firstName, s.firstName) &&
+                Objects.equals(lastName, s.lastName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName);
+    }
 	
 }

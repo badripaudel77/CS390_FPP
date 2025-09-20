@@ -18,8 +18,8 @@ public class Key {
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        Key key = (Key) o;
+        if (this == o) return true;
+        if (!(o instanceof Key key)) return false;
         return Objects.equals(firstName, key.firstName) && Objects.equals(lastName, key.lastName);
     }
 
