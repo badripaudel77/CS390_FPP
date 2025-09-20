@@ -15,12 +15,13 @@ public class EmployeeAdmin {
         List<Employee> filteredEmployees = new ArrayList<>();
 
         for(String ssn: socSecNums) {
+            if (ssn == null) continue;
             var employee = table.get(ssn);
             if(employee != null && employee.getSalary() > 80_000) {
                 filteredEmployees.add(employee);
             }
         }
-        Collections.sort(filteredEmployees, new EmployeeComparator());
+        filteredEmployees.sort(new EmployeeComparator());
 		return filteredEmployees;
 	}
 }

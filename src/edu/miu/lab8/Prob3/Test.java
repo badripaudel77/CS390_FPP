@@ -38,5 +38,7 @@ public class Test {
         // list all the borrowed books
         library.listBorrowedBooks();
         System.out.println();
+
+        library.returnBook("978-0596009205");
     }
 }

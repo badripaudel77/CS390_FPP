@@ -8,7 +8,7 @@ public class EmployeeComparator implements Comparator<Employee> {
     public int compare(Employee employee1, Employee employee2) {
         // NOTE: Since ssn is always given unique, no two Employee will have same ssn, it is not required to use all fields while comparing.
         return Comparator
-                .comparing(Employee::getSsn, Comparator.nullsFirst(String::compareTo))
+                .comparing(Employee::getSsn, Comparator.nullsFirst(Comparator.naturalOrder()))
                 .compare(employee1, employee2);
     }
 }
