@@ -3,21 +3,48 @@ package edu.miu.lab9.prob2;
 public class Driver {
     public static void main(String[] args) {
         CustomerAccount customerAccount = new CustomerAccount("Badri", "123456", 2000);
+        System.out.println("Initial balance: $" + customerAccount.getBalance());
+        try {
+            System.out.println("1.Depositing -100...");
+            customerAccount.deposit(-100);
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        System.out.println("Current balance: $" + customerAccount.getBalance());
 
-        boolean deposited = customerAccount.deposit(100);
-        System.out.println("Amount deposited : " + deposited);
 
-        boolean withdrawn = customerAccount.withdraw(2000);
-        System.out.println("Amount withdrawn : " + withdrawn);
+        try {
+            System.out.println("2.Withdrawing 3000$ (Insufficient funds)...");
+            customerAccount.withdraw(3000);
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
 
-        // Note: Code after exception will not be executed (it was tested one by one)
-        // withdraw makes balance less than 100 : Throws error
-        customerAccount.withdraw(50);
 
-        // withdraw more than the balance : Throws error
-        customerAccount.withdraw(100);
+        try {
+            System.out.println("3.Withdrawing 1950$ (balance would drop below 100)...");
+            customerAccount.withdraw(1950);
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        System.out.println("Balance after withdraw: $" + customerAccount.getBalance());
 
-        //Can't deposit Negative amount :  Throws error
-        customerAccount.deposit(-100);
+
+
+        try {
+            System.out.println("4.Depositing 100...");
+            customerAccount.deposit(100);
+            System.out.println("Balance after deposit: $" + customerAccount.getBalance());
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+        try {
+            System.out.println("Withdrawing 2000...");
+            customerAccount.withdraw(2000);
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        System.out.println("Balance after withdraw: $" + customerAccount.getBalance());
     }
 }

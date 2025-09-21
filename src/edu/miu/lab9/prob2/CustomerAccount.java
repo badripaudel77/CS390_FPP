@@ -19,14 +19,15 @@ public class CustomerAccount {
     }
 
     public boolean withdraw(double amount) {
+        double remaining = balance - amount;
         if(amount > balance) {
             throw new AccountException("Insufficient funds! Withdrawal amount exceeds balance.");
         }
-        if(balance - amount < 100) {
+        else if(remaining < 100 && remaining >= 0) {
             throw new AccountException("Low balance warning! Balance cannot go below $100.");
         }
-        if (amount > 0 && amount <= balance) {
-            balance -= amount;
+        else if (amount > 0 && amount <= balance) {
+            balance = remaining;
             return true;
         }
         return false;
